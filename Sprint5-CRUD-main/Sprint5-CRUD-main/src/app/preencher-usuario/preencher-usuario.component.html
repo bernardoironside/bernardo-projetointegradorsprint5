@@ -1,0 +1,83 @@
+<div class="pl-16 my-8">
+  <div class="">
+    <form>
+      <div class="grid gap-6 md:grid-cols-3">
+        <!--Primeiro Input-->
+        <div>
+          <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome</label>
+          <div class="relative">
+            <input type="text" id="first_name"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-10 pr-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Senac RJ" required />
+            <svg class="absolute w-5 h-5 text-gray-400 transform -translate-y-1/2 left-3 top-1/2 dark:text-gray-600"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4ZM10 13C7.79086 13 6 14.7909 6 17V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V17C18 14.7909 16.2091 13 14 13H10Z"
+                fill="#383838" />
+            </svg>
+          </div>
+        </div>
+        <!-- Final do Primeiro Input-->
+
+        <!--Segundo Input-->
+        <div>
+          <label for="cpf_ou_cnpj" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CPF ou CNPJ</label>
+          <div class="relative">
+            <input type="text" id="cpf_ou_cnpj"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-10 pr-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="123.456.789.00" required maxlength="14"
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57" /> <!-- Apenas números -->
+            <!-- Ícone de limpar -->
+            <button type="button" onclick="clearInput()" class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 focus:outline-none">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!--Final do Segundo Input-->
+
+        <div>
+          <label for="status" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status</label>
+          <select id="status"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option selected>Ativo</option>
+            <option>Desativado</option>
+            <option>Concluído</option>
+            <option>Pendente</option>
+            <option>Cancelado</option>
+          </select>
+        </div>
+      </div>
+    </form>
+
+
+  </div>
+  <div class="flex flex-row items-center justify-between ">
+    <a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+        class="me-2">
+        <path
+          d="M5 7H19M10 10V18M14 10V18M10 3H14C14.2652 3 14.5196 3.10536 14.7071 3.29289C14.8946 3.48043 15 3.73478 15 4V7H9V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3ZM6 7H18V20C18 20.2652 17.8946 20.5196 17.7071 20.7071C17.5196 20.8946 17.2652 21 17 21H7C6.73478 21 6.48043 20.8946 6.29289 20.7071C6.10536 20.5196 6 20.2652 6 20V7Z"
+          stroke="#383838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg></a>
+
+    <div class="flex flex-row justify-end mt-4 mr-80">
+      <button type="button"
+        class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">
+        <svg class="mr-3" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M6.5 9.5L9 12L13 8M19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10Z"
+            stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+        Salvar
+      </button>
+
+    </div>
+  </div>
+</div>
+<script>
+  function clearInput() {
+    document.getElementById('cpf_ou_cnpj').value = '';
+  }
+</script>

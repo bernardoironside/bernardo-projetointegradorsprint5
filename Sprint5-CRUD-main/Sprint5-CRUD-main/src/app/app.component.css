@@ -1,0 +1,26 @@
+body{
+  width: 1704px;
+  height: 1024px;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 266.31px 1fr; /* 2 colunas: sidebar, conteúdo */
+  grid-template-rows: 64px auto 1fr; /* 3 linhas: navbar, breadcrumb, content */
+  height: 100vh;
+}
+
+
+app-navbar {
+  grid-column: 1 / span 2; /* Navbar ocupa as 2 colunas */
+
+}
+
+
+
+
+
+
+
+
